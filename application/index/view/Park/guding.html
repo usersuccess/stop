@@ -1,0 +1,36 @@
+{layout name="layout" /}
+<div class="panel panel-default" style="width:500px;text-align: center;margin:0 auto;">
+    <div class="panel panel-body" >
+        <form action="{:url('park/edit',['num'=>$data->port])}"method="post">
+            <div class="form-inline">
+                <label class="control-label">车牌号</label>&nbsp;
+                <input type="text"id="car_num" name="car_num"value="{$data->car_num}"class="form-control"onchange="checkNum()"><span id="show" style="color: red"></span>
+            </div><br>
+            <div class="form-inline">
+                <label class="control-label">车主</label>
+                <input type="text" name="name"value="{$data->name}"class="form-control">
+            </div><br>
+            <div class="form-inline">
+                <label class="control-label">电话</label>
+               <input type="text"id="phone" name="phone"value="{$data->phone}"class="form-control"onchange="checkPhone()"><span id="show1" style="color: red"></span>
+            </div><br>
+            <div class="form-inline">
+                <label class="control-label">车型</label>
+                <input type="text" name="type"value="{$data->type}"class="form-control"readonly>
+            </div><br>
+            <div class="form-inline">
+                <label class="control-label">开始时间</label>
+                <input type="text" name="start_time"value="{$data->start_time}"class="form-control"readonly>
+            </div><br>
+            <div class="form-inline">
+                <label class="control-label">到期时间</label>
+                <input type="text" name="end_time"value="{$data->end_time}"class="form-control"readonly>
+            </div><br>
+            <input type="submit"name="submit"class="btn btn-danger" value="修改">
+            <a href="{:url('park/show')}" class="btn btn-success">返回</a>
+            </form>
+    </div>
+</div>
+<div style="text-align: center">
+
+</div>

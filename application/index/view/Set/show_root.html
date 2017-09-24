@@ -1,0 +1,20 @@
+{layout name="layout" /}
+<div class="panel-default">
+    <div class="panel-heading">
+        <a href="{:url('set/show')}" class="btn btn-xs btn-primary">管理员</a>
+        <a href="{:url('set/show_root')}" class="btn btn-xs btn-primary">超级管理员</a>
+    </div>
+    <table class="table">
+        <tr class="row">
+            <th>账号</th><th>姓名</th><th>密码</th><th>权限</th>
+        </tr>
+        {volist name="user" id="v"}
+        <tr class="row">
+            <td>{$v->user}</td><td>{$v->username}</td><td>{$v->password}</td><td>{$v->root}</td>
+        </tr>
+        {/volist}
+    </table>
+</div>
+<div style="text-align: center">
+    {$user->render()}
+</div>

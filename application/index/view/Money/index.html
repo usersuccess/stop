@@ -1,0 +1,28 @@
+{layout name="layout" /}
+<div style="text-align: center">
+    <form action="{:url('money/index')}" method="post">
+        <input name="date" onclick="WdatePicker()"  style="width:200px" readonly>
+        <input type="submit" name="submit" value="查询">
+    </form>
+</div>
+<div class="panel panel-default" style="width:700px;text-align: center;margin:0 auto;" >
+    <div class="panel panel-body">
+
+        <table class="table table-bordered" >
+            <tr class="row">
+                <th>车牌号</th><th>进入时间</th><th>离开时间</th><th>所付金额</th>
+            </tr>
+            {volist name="arr" id="v"}
+            <tr class="row">
+                <th>{$v->car_num}</th><th>{$v->c_time}</th><th>{$v->out_time}</th><th>{$v->price}</th>
+            </tr>
+            {/volist}
+            {volist name="data" id="s"}
+            <tr class="row">
+            <th>{$s->car_num}</th><th>{$s->start_time}</th><th>{$s->end_time}</th><th>{$s->price}</th>
+            {/volist}
+            </tr>
+        </table>
+        <h2>总收入:{$price}RMB</h2>
+    </div>
+</div>

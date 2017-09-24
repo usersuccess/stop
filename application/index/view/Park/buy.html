@@ -1,0 +1,51 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        <form action="{:url('park/buy_save')}" method="post" style="float:left">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车牌号</label>&nbsp;<span id="show" style="color: red"></span>
+                <input type="text" name="car_num" class="form-control" onchange="checkNum()" required>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">姓名</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">手机</label><span id="show1" style="color: red"></span>
+                <input type="text" name="phone" class="form-control"onchange="checkPhone()" required>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车型</label>
+                <select name="type" id="type" class="form-control" onchange="portBuy()"  required>
+                    <option value="" style="display:none;">请选择车型</option>
+                    <option value="1">小</option>
+                    <option value="2">中</option>
+                    <option value="3">大</option>
+                </select>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">停车位</label>
+                <input type="text" name="port_num" id="port_num" class="form-control" value="" required  >
+            </div>
+            <div class="form-inline" style="width: 200px">
+                <label class="control-label">购买时长</label><br>
+                <select name="year" id="year" class="form-control" style="width: 80px" onchange="CarBuy()">
+                    {for start="0" end="11"}
+                    <option value={$i}>{$i}</option>
+                    {/for}
+                </select> 年
+                <select name="month" id="month" class="form-control" style="width:80px" onchange="CarBuy()">
+                    {for start="0" end="12"}
+                    <option value={$i}>{$i}</option>
+                    {/for}
+                </select>月
+            </div>
+            <div class="form-inline" style="width: 200px">
+                <label class="control-label">应付价格</label>
+                <input type="text" name="price" id="price" class="form-control" required readonly> 元
+            </div>
+            <br>
+            <input type="submit" name="submit" class="btn btn-success" style="width:200px" value="确认购买">
+        </form>
+    </div>
+</div>

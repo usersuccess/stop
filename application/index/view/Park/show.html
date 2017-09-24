@@ -1,0 +1,10 @@
+{layout name="layout" /}
+<div  style="text-align: center">
+    <span><h3>剩余空车位:{$nullCount}</h3></span><br>
+</div>
+{volist name="data" id="v"}
+{if condition="$v->status=='0'"} <span class="label label-success" style="width: 100px;height: 50px;line-height: 50px;margin: 50px">{$v->num}</span>
+{elseif condition="$v->status=='1'" /} <span class="label label-danger" style="width: 100px;height: 50px;line-height: 50px;margin: 50px"><a href="{:url('park/select',['num'=>$v->num])}">{$v->num}</a></span>
+{else/} <span class="label label-warning" style="width: 100px;height: 50px;line-height: 50px;margin: 50px"><a href="{:url('park/guding',['num'=>$v->num])}">{$v->num}</a></span>
+{/if}
+{/volist}

@@ -1,0 +1,31 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        <form action="{:url('set/edit')}" method="post" style="float:left">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">账号</label>
+                <input type="text" name="user" value="{$user['user']}" class="form-control" readonly="readonly">
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">姓名</label>
+                <input type="text" name="username" value="{$user['username']}" class="form-control"  required>
+            </div>
+            <!--<div class="control-group" style="width: 200px">
+                <label class="control-label">密码</label>
+                <input type="text" name="password" value="{$user['password']}" class="form-control" required>
+            </div>-->
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">权限</label>
+                <select name="root" id="root" class="form-control">
+                    <option value="{$user['root']}" style="display:none;" selected>权限{$user['root']}</option>
+                    <option value="1">权限1</option>
+                    <option value="2">权限2</option>
+                </select>
+            </div>
+            <br>
+            <input type="submit" name="submit" class="btn btn-success " value="保存">
+        </form>
+    </div>
+</div>
+    </div>
+</div>

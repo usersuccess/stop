@@ -1,0 +1,30 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        <form action="{:url('addport/add')}" method="post" style="float:left">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">个数</label>
+                <input type="text" name="num" class="form-control" required>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车型</label>
+                <select name="type" id="type" class="form-control" onchange="portBuy()"  required>
+                    <option value="" style="display:none;">请选择车型</option>
+                    <option value="1">小</option>
+                    <option value="2">中</option>
+                    <option value="3">大</option>
+                </select>
+            </div>
+            <div class="form-inline" style="width: 300px">
+                <label class="control-label">临时价格</label><br>
+                <input type="text" name="price" class="form-control" required>元/小时
+            </div>
+            
+            <div class="form-inline" style="width: 300px">
+                <label class="control-label">购买价格</label><br>
+                <input type="text" name="buy_price" class="form-control" required>元/月
+            </div><br>
+            <input type="submit" name="submit" class="btn btn-success" style="width:200px" value="保存">
+        </form>
+    </div>
+</div>

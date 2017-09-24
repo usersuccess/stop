@@ -1,0 +1,21 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel panel-body">
+        <form action="{:url('search/num')}" method="post" style="float:left">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车牌号</label>
+                <input type="text" name="car_num" class="form-control" required><br>
+
+                <input type="submit"name="submit"class="btn btn-success">
+            </div>
+        </form>
+        <form action="{:url('search/port')}" method="post" style="float:left;margin-left:100px ">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车位号</label>
+                <input type="text" name="car_port" class="form-control" required><br>
+
+                <input type="submit"name="submit"class="btn btn-success">
+            </div>
+        </form>
+    </div>
+</div>

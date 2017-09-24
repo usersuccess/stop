@@ -1,0 +1,30 @@
+{layout name="layout" /}
+<div class="panel panel-default" style="width:500px;text-align: center;margin:0 auto;" >
+    <div class="panel panel-body">
+        <table class="table table-bordered" >
+            <tr class="row">
+                <th>车牌号</th>
+                <td>{$data->car_num}</td>
+            </tr>
+            <tr class="row">
+                <th>车主</th>
+                <td>{$data->username}</td>
+            </tr>
+            <tr class="row">
+                <th>车主电话</th>
+                <td>{$data->phone}</td>
+            </tr>
+            <tr class="row">
+                <th>车型</th>
+                <td>{$data->type}</td>
+            </tr>
+            <tr class="row">
+                <th>开始时间</th>
+                <td>{$data->c_time}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="text-align: center">
+    <a href="{:url('search/index')}" class="btn btn-success" style="width: 500px" >返回</a>
+</div>

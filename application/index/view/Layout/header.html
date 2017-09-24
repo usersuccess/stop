@@ -1,0 +1,116 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" type="text/css"href="__ROOT__/static/bootstrap/css/bootstrap.css">
+    <script href="__ROOT__/static/bootstrap/js/bootstrap.js"></script>
+    <link rel="Bookmark" href="favicon.ico" >
+    <link rel="Shortcut Icon" href="favicon.ico" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="__ROOT__/static/lib/html5.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/lib/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/static/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/static/h-ui.admin/css/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/lib/Hui-iconfont/1.0.8/iconfont.css" />
+
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/static/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="__ROOT__/static/static/h-ui.admin/css/style.css" />
+
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script type="text/javascript" src="__ROOT__/static/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="__ROOT__/static/js/ajax.js"></script>
+    <script language="javascript" type="text/javascript" src="__ROOT__/static/date/WdatePicker.js"></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>停车管理系统</title>
+    <script language="JavaScript">
+        function check(){
+            if(window.confirm("")){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+<header class="navbar-wrapper">
+    <div class="navbar navbar-fixed-top">
+        <div class="container-fluid cl"> <span class="logo navbar-slogan f-l mr-10 hidden-xs">后台管理系统</span> <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
+            <nav class="nav navbar-nav">
+            </nav>
+            <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+                <ul class="cl">
+                    <li class="dropDown dropDown_hover"> {$Request.session.username}<a href="#" class="dropDown_A">{$Request.session.admin}<i class="Hui-iconfont">&#xe6d5;</i></a>
+                        <ul class="dropDown-menu menu radius box-shadow">
+                            <li><a href="{:url('login/update')}">个人设置</a></li>
+                            <li><a href="{:url('login/logout')}">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+<aside class="Hui-aside">
+
+    <div class="menu_dropdown bk_2">
+
+
+
+        <ul>
+            <li><a href="{:url('index/index')}" >首页</a></li>
+        </ul>
+        <li><a href="{:url('park/index')}" >停车管理</a></li>
+        </ul>
+        <dl>
+            <dt><i class="Hui-iconfont"></i>车位管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+            <dd>
+                <ul>
+                    <li><a href="{:url('park/show')}" >车位详情</a></li>
+                    <li><a href="{:url('park/buy')}" >购买车位</a></li>
+                    <li><a href="{:url('addport/index')}" >添加车位</a></li>
+                    </ul>
+            </dd>
+        </dl>
+
+        <ul>
+            <li><a href="{:url('money/index')}" >财务查询</a></li>
+        </ul>
+        <ul>
+            <li><a href="{:url('Buyshow/index')}" >购买详情</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="{:url('search/index')}" >查询管理</a></li>
+        </ul>
+        {if condition="$Request.session.root=='2'"}
+        <dl>
+        <dt><i class="Hui-iconfont"></i>账号管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+        <dd>
+            <ul>
+                <li><a href="{:url('set/index')}" >添加管理员</a></li>
+                <li><a href="{:url('set/show')}" >管理员信息</a></li>
+            </ul>
+        </dd>
+    </dl>
+        {/if}
+    </div>
+</aside>
+<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont"></i> </nav>
+    <div class="Hui-article">
+        <article class="cl pd-20">

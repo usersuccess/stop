@@ -1,0 +1,27 @@
+{layout name="layout" /}
+<div class="panel panel-default" style="text-align: center;margin:0 auto;" >
+    <div class="panel panel-body">
+
+        <table class="table table-bordered" >
+            <tr class="row">
+                <th>车牌号</th><th>姓名</th><th>电话</th><th>车型</th><th>车位</th><th>购买时间</th><th>到期时间</th><th>所付金额</th><th>编辑</th>
+            </tr>
+            {volist name="data" id="v"}
+            <tr class="row">
+                <th>{$v->car_num}</th><th>{$v->name}</th><th>{$v->phone}</th><th>{$v->type}</th><th>{$v->port}</th><th>{$v->start_time}</th>
+                {if condition="strtotime($v->end_time) < time()"}
+                <th style="color: red">{$v->end_time}</th>
+                {else/}
+                <th>{$v->end_time}</th>
+                {/if}
+                <th>{$v->price}</th>
+                {if condition="$v->status==1"}
+                <th><a href="{:url('buyshow/update',['id'=>$v->id])}" id="{$v->id}" class=" btn btn-danger ">注销</a></th>
+                {else/}
+                <th><a href="#" class=" btn disabled ">注销</a></th>
+                {/if}
+            </tr>
+            {/volist}
+        </table>
+    </div>
+</div>

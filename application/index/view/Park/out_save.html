@@ -1,0 +1,26 @@
+{layout name="layout" /}
+<div class="panel panel-default" style="width:500px;text-align: center;margin:0 auto;" >
+    <div class="panel panel-body">
+        <table class="table table-bordered" >
+            <tr class="row">
+                <th>车牌号</th>
+                <td>{$arr->car_num}</td>
+            </tr>
+            <tr class="row">
+                <th>开始时间</th>
+                <td>{$arr->c_time}</td>
+            </tr>
+            <tr class="row">
+                <th>结束时间</th>
+                <td>{$arr->out_time}</td>
+            </tr>
+            <tr class="row">
+                <th>费用</th>
+                <td>{$arr->price}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="text-align: center">
+    <a href="{:url('park/index')}" class="btn btn-success" style="width: 500px" >返回</a>
+</div>

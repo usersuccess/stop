@@ -1,0 +1,43 @@
+{layout name="layout" /}
+<div class="panel panel-default">
+    <div class="panel panel-body" >
+        <form action="{:url('park/port_save')}" method="post" style="float:left" >
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车牌号</label>&nbsp;<span id="show" style="color: red"></span>
+                <input type="text" name="car_num" id="car_num" class="form-control" onchange="checkNum()"onblur="checkNum2()" required>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">姓名</label>
+                <input type="text" name="name"id="name" class="form-control"value="" required>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">手机</label>&nbsp;<span id="show1" style="color: red"></span>
+                <input type="text" name="phone" id="phone" class="form-control" value=""required onchange="checkPhone()">
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车型</label>
+                <select name="type" id="type" class="form-control" onchange="Carin()" required>
+                    {if condition="$=='2'"}
+                    <option value="" style="display:none;">请选择车型</option>
+                    <option value="1">小</option>
+                    <option value="2">中</option>
+                    <option value="3">大</option>
+                </select>
+            </div>
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">停车位</label>
+                <input type="text" name="port_num" id="port_num" class="form-control" value="" required readonly>
+            </div>
+            <br>
+            <input type="submit" name="submit" class="btn btn-success " value="开始停车">
+        </form>
+        <form action="{:url('park/out_save')}" method="post" style="float:left;margin-left:100px ">
+            <div class="control-group" style="width: 200px">
+                <label class="control-label">车牌号</label>
+                <input type="text" name="car_num" class="form-control" required >
+            </div>
+            <br>
+            <input type="submit" name="submit" class="btn btn-danger " value="结束停车">
+        </form>
+    </div>
+</div>

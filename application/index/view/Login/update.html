@@ -1,0 +1,19 @@
+{layout name="layout" /}
+<div class="panel-default">
+    <form action="{:url('login/edit')}" method="post" class="form-group">
+        <div class="form-inline">
+            <label class="control-label" style="font-size: large">账号</label>
+            <input type="text" name="user" value="{$Request.session.user}" readonly="readonly">
+        </div>
+        &nbsp;
+        <div class="form-inline">
+            <label class="control-label" style="font-size: large">密码</label>
+            <input type="password" name="password">
+        </div>
+        &nbsp;
+        <div class="form-inline">
+            <input type="submit" name="submit" value="保存" class="btn btn-xs btn-success">
+            <input type="reset" name="reset" value="重置" class="btn btn-xs btn-primary" style="margin-left:60px;">
+        </div>
+    </form>
+</div>
